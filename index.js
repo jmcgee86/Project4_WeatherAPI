@@ -3,17 +3,17 @@
 $(document).ready(function() {
 	$.ajax({
 		method: "GET",
-		url: "",
+		url: "https://api.openweathermap.org/data/2.5/forecast?",
 		data: {
-
-			apiKey: APIKEY
+			//q: "London, UK",
+			id: "524901",	
+			appid: APIKEY
 		},
 		success: function(data) {
-			if (data.status === "ok") {
+			//if (data.status === "ok") {
 				console.log(data);
-				
 			}
-		}
+		
 	});
 	
 	
