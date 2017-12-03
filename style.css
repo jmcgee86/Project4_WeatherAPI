@@ -1,7 +1,60 @@
-#failed {
-    visibility: hidden;
+#failed{
+	visibility: hidden;
 }
 
-#c{
-    visibility: hidden;
+#pagetitle{
+	text-align: center;
+}
+
+h1{
+    font-size: 3.5em;
+    color: white;
+    font-family: "Open Sans Condensed", sans-serif;
+}
+
+
+
+p{
+    font-size: 2.5em;
+    color: white;
+    font-family: "Open Sans Condensed", sans-serif;
+}
+
+
+#bluebg{
+	z-index: -1;
+    background-color: black;
+    opacity: .7;
+    color: white;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 10px;
+    max-width: 750px;
+    min-height: 95vh;
+}
+
+#weatherdisplay{
+	z-index: 1;
+}
+
+#greybg{
+    background-color: #95a5a6;
+    max-width: 800px;
+    min-height: 100vh;
+    z-index: -2;
+}
+
+
+@media (max-width:767px){
+	#bluebg{
+		text-align: center;
+	}
+	#bluebg img{
+		display: block;
+		margin: auto;
+	}
+	#pagetitle{
+		font-size: 2.5em;
+	}
 }

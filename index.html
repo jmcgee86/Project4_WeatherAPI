@@ -2,33 +2,49 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Your Local Weather</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-	<!--REQUIREMENTS
-        Page requires a key.js file with the following format
-        var APIKEY = "apikey from weatherAPI" 
-    -->
 	<link href="style.css" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,400,600,700&amp;lang=en" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<title>Your Local Weather</title>
 </head>
 <body>
-	<div class="container">
-	<div class ="container" id = "info">
-	    <h1>Today's Local Weather</h1>
-	    <form id = "failed">
-	    	Could not find your location, please enter zip code:
-	    	<input id ="zc" type = "text" name= "zip" value="Enter Zipcode">
-	    	<button type = "submit" name ="submit">Submit</button>
-	    </form>
-		<button id ="changetemp" class="btn btn-primary">F°</button>
-	    <p id ="ctemp">Current Temperature: <span id = "temp"></span></p>
-	    <p id = "min-temp">Low Temperature: <span id ="min"></span></p>
-	    <p id = "max-temp">Hi Temperature: <span id="max"></span></p>
-	    <div id ="icon"></div>
+	<div class="container" id="greybg">
+		<div class="jumbotron" id="bluebg">
+			<h1 id="pagetitle">Today's Weather</h1>
+			<form id = "failed">
+	    		Could not find your location, please enter zip code:
+	    		<input id ="zc" type = "text" name= "zip" value="Enter Zipcode">
+	    		<button type = "submit" name ="submit">Submit</button>
+	    	</form>
+	    	<div id = "weatherdisplay">
+			<div class="row">
+				<div class="col-sm-4"><button id ="changetemp" class="btn btn-primary">F°</button></div>
+				<div class="col-sm-12">
+					<p id ="ctemp">Current Temperature: </span></p>
+				</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<h1 id = "temp"></h1>	
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-sm-12" id="icon"></div>
+				</div>
+				<div class = "row">
+					<div class = "col-sm-12"><p>Today's Forecast: <span id="description"></span></p></div>
+				</div>
+				<div class = "row">
+					<div class = "col-sm-12"><p>Weather for: <span id = "city"></p></span></div>
+				</div>
+				</div>
+				<div id = "displayimg"></div>
+		</div>
 	</div>
-
-	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script> 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	</script> 
