@@ -1,6 +1,8 @@
 /* global $ APIKEY navigator*/
 
 $(document).ready(function() {
+	
+	
   
   var failed = document.getElementById("fail");
 
@@ -10,22 +12,14 @@ $(document).ready(function() {
     return;
   }
 
-  // navigator.geolocation.getCurrentPosition(success, error);
-
-
   function success(position) {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
-    console.log(latitude);
-    console.log("location success");
-
 	
 	$.ajax({
 		method: "GET",
 		url: "https://api.openweathermap.org/data/2.5/forecast?",
 		data: {
-			//q: "London, UK",
-			//zip: "02915,us",
 			lat: latitude,
 			lon: longitude,
 			appid: APIKEY
@@ -33,18 +27,44 @@ $(document).ready(function() {
 		success: function(data) {
 			//if (data.status === "ok") {
 				console.log(data);
-				function fConverter(valNum) {
-				  var farenheit=((valNum-273.15)*1.8)+32;
-				  farenheit=Math.round (farenheit);
-					return farenheit;
+				
+				function fConverter(valNum1,valNum2, valNum3) {
+				document.getElementById("temp").innerHTML = Math.round(((valNum1-273.15)*1.8)+32) + "°F";
+				document.getElementById("min").innerHTML = Math.round(((valNum2-273.15)*1.8)+32) + "°F";
+				document.getElementById("max").innerHTML = Math.round(((valNum3-273.15)*1.8)+32) + "°F";
 				}
-				var tempf = fConverter(data.list[0].main.temp);
-				var tempfmin  = fConverter(data.list[0].main.temp_min);
-				var tempfmax = fConverter(data.list[0].main.temp_max);
-				document.getElementById("temp").innerHTML = tempf;
-				document.getElementById("min").innerHTML = tempfmin;
-				document.getElementById("max").innerHTML = tempfmax;
+				
+				fConverter (data.list[0].main.temp, data.list[0].main.temp_min, data.list[0].main.temp_max);
+
+				function cConverter(valNum1, valNum2, valNum3){
+				 document.getElementById("temp").innerHTML= Math.round (valNum1-273.15) + "C°";
+				 document.getElementById("min").innerHTML= Math.round (valNum2-273.15) + "C°";
+				 document.getElementById("max").innerHTML= Math.round (valNum3-273.15) + "C°";
+				}
+				
+				$('#changetemp').click(function() {
+					if (document.getElementById("changetemp").innerHTML === "F°"){
+						cConverter(data.list[0].main.temp, data.list[0].main.temp_min, data.list[0].main.temp_max);
+						document.getElementById("changetemp").innerHTML = "C°";
+						return;
+					}
+					else {
+						fConverter(data.list[0].main.temp, data.list[0].main.temp_min, data.list[0].main.temp_max);
+						document.getElementById("changetemp").innerHTML = "F°";
+					}
+	});	
+				
+				//var tempf = fConverter(data.list[0].main.temp);
+				//var tempfmin  = fConverter(data.list[0].main.temp_min);
+				//var tempfmax = fConverter(data.list[0].main.temp_max);
+				//document.getElementById("temp").innerHTML = tempf + "°F";
+				//document.getElementById("min").innerHTML = tempfmin +"°F";
+				//document.getElementById("max").innerHTML = tempfmax +"°F";
+				
+				//cConverter(data.list[0].main.temp, data.list[0].main.temp_min, data.list[0].main.temp_max);
 			}
+			
+			
 	});
 	
   }
@@ -75,4 +95,19 @@ $(document).ready(function() {
   }
   //}
   navigator.geolocation.getCurrentPosition(success, error);
+  
+  
 });
+
+
+/*$('#changetemp').click(function() {
+					if (document.getElementById("changetemp").innerHTML === "F°"){
+						cConverter;
+						document.getElementById("changetemp").innerHTML = "C°";
+						return;
+					}
+					else {
+						fConverter;
+						document.getElementById("changetemp").innerHTML = "F°";
+					}
+	});	*/
