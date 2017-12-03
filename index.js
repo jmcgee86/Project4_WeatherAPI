@@ -33,6 +33,17 @@ $(document).ready(function() {
 		success: function(data) {
 			//if (data.status === "ok") {
 				console.log(data);
+				function fConverter(valNum) {
+				  var farenheit=((valNum-273.15)*1.8)+32;
+				  farenheit=Math.round (farenheit);
+					return farenheit;
+				}
+				var tempf = fConverter(data.list[0].main.temp);
+				var tempfmin  = fConverter(data.list[0].main.temp_min);
+				var tempfmax = fConverter(data.list[0].main.temp_max);
+				document.getElementById("temp").innerHTML = tempf;
+				document.getElementById("min").innerHTML = tempfmin;
+				document.getElementById("max").innerHTML = tempfmax;
 			}
 	});
 	
