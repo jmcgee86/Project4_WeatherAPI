@@ -27,6 +27,8 @@ $(document).ready(function() {
 		success: function(data) {
 			//if (data.status === "ok") {
 				console.log(data);
+				var weatherIcon = "http://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png";
+				document.getElementById("icon").innerHTML = '<img src = "' + weatherIcon + '">';
 				
 				function fConverter(valNum1,valNum2, valNum3) {
 				document.getElementById("temp").innerHTML = Math.round(((valNum1-273.15)*1.8)+32) + "°F";
