@@ -53,6 +53,13 @@ $(document).ready(function() {
 					}
 					
 	});	
+					function changeTheme(){
+					console.log("changeimg");
+					if (data.weather[0].main == "Clear"){
+						document.getElementById("displayimg").innerHTML = "<img src = 'https://images.unsplash.com/photo-1469282311538-c8b591f67d2e?auto=format&fit=crop&w=1951&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D' height='20%' width='20%'>";
+					}
+				}
+changeTheme();
 
 			}
 			
@@ -94,15 +101,16 @@ $(document).ready(function() {
 
 
 
-/*
-change background img base on id - not currently working
-				
+
+//change background img base on id - not currently working
+	/*			
 				function changeTheme(){
 					console.log("changeimg");
-					if (data.weather[0].id === 804){
+					if (data.weather[0].main == "clear"){
 						document.getElementById("displayimg").style.backgroundImage = "url('https://images.unsplash.com/photo-1469282311538-c8b591f67d2e?auto=format&fit=crop&w=1951&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D')";//cloudy
 					}
-				if (200 <= data.weather[0].id < 300 ){
+
+				/*if (200 <= data.weather[0].id < 300 ){
 					document.getElementById("displayimg").style.backgroundImage = "url('https://images.unsplash.com/photo-1506432734318-4bf212257692?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D')";//thunder
 				}
 				else if (300 <= data.weather[0].id < 400 ){
@@ -124,5 +132,4 @@ change background img base on id - not currently working
 				}
 				}
 changeTheme();
-
 */
