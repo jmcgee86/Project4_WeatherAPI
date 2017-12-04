@@ -54,13 +54,25 @@ $(document).ready(function() {
 					
 	});	
 					function changeTheme(){
-					console.log("changeimg");
-					if (data.weather[0].main == "Clear"){
-						document.getElementById("displayimg").innerHTML = "<img src = 'https://images.unsplash.com/photo-1469282311538-c8b591f67d2e?auto=format&fit=crop&w=1951&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D' height='20%' width='20%'>";
+					if (data.weather[0].main == "Clouds"){
+						document.getElementById("displayimg").innerHTML = 'clouds';//"<img src = 'https://images.unsplash.com/photo-1469282311538-c8b591f67d2e?auto=format&fit=crop&w=1951&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D' height='30%' width='30%'>";
 					}
+					else if (data.weather[0].main == "Rain"){
+						document.getElementById("displayimg").innerHTML  = "rain -  add picture here";
+					}
+					else if (data.weather[0].main == "Snow"){
+					document.getElementById("displayimg").innerHTML = "snow -add picture";
 				}
+		}
+		
+		function warning(){
+			console.log("warning check");
+			if (data.weather[0].main == "Extreme"){
+				document.getElementById("warn").innerHTML = '<h3>**Warning, extreme weather expected in your area.**</h3>';
+			}
+		}
 changeTheme();
-
+warning();
 			}
 			
 			

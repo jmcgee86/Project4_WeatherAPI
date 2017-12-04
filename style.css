@@ -45,6 +45,9 @@ p{
     z-index: -2;
 }
 
+#warn{
+    color: red;
+}
 
 @media (max-width:767px){
 	#bluebg{
@@ -58,3 +61,4 @@ p{
 		font-size: 2.5em;
 	}
 }
+
