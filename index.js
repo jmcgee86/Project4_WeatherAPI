@@ -33,7 +33,7 @@ $(document).ready(function() {
 				fConverter (data.main.temp);
 
 				function cConverter(valNum1){
-				 document.getElementById("temp").innerHTML= Math.round (valNum1-273.15) + "C°";
+				 document.getElementById("temp").innerHTML= Math.round (valNum1-273.15) + "°C";
 				}
 				
 				var weatherIcon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
