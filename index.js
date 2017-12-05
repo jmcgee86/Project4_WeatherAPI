@@ -33,7 +33,7 @@ $(document).ready(function() {
 				fConverter (data.main.temp);
 
 				function cConverter(valNum1){
-				 document.getElementById("temp").innerHTML= Math.round (valNum1-273.15) + "°C";
+				 document.getElementById("temp").innerHTML= Math.round(valNum1-273.15) + "°C";
 				}
 				
 				var weatherIcon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
@@ -54,14 +54,23 @@ $(document).ready(function() {
 					
 	});	
 					function changeTheme(){
-					if (data.weather[0].main == "Clouds"){
-						document.getElementById("displayimg").innerHTML = 'clouds';//"<img src = 'https://images.unsplash.com/photo-1469282311538-c8b591f67d2e?auto=format&fit=crop&w=1951&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D' height='30%' width='30%'>";
+					if (data.weather[0].main == "Clouds"){//clouds
+						document.getElementById("displayimg").innerHTML = "<img src = 'https://images.pexels.com/photos/158163/clouds-cloudporn-weather-lookup-158163.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb'>";
 					}
-					else if (data.weather[0].main == "Rain"){
-						document.getElementById("displayimg").innerHTML  = "rain -  add picture here";
+					else if (data.weather[0].main == "Rain"){//rain
+						document.getElementById("displayimg").innerHTML = "<img src = 'https://images.pexels.com/photos/110874/pexels-photo-110874.jpeg?w=260&h=260&dpr=2&auto=compress&cs=tinysrgb'>";
 					}
-					else if (data.weather[0].main == "Snow"){
-					document.getElementById("displayimg").innerHTML = "snow -add picture";
+					else if (data.weather[0].main == "Snow"){//snow
+					document.getElementById("displayimg").innerHTML = "<img src = 'https://images.pexels.com/photos/60561/winter-snow-nature-60561.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb'>";
+				}
+				else if (data.weather[0].main == "Clear"){//clear
+					document.getElementById("displayimg").innerHTML = "<img src = 'https://images.pexels.com/photos/3768/sky-sunny-clouds-cloudy.jpg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb'>"
+				}
+				else if (data.weather[0].main == "Mist"){//mist
+					document.getElementById("displayimg").innerHTML = "<img src = 'https://images.pexels.com/photos/5230/road-fog-foggy-mist.jpg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb'>"
+				}
+				else if (data.weather[0].main == "Thunder"){//thunder
+					document.getElementById("displayimg").innerHTML = "<img src = 'https://static.pexels.com/photos/53459/lightning-storm-weather-sky-53459.jpeg'>"
 				}
 		}
 		
