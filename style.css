@@ -47,6 +47,14 @@ p{
 
 #warn{
     color: red;
+    font-weight: 200;
+}
+
+#displayimg{
+    border-radius: 20%;
+    width: 100%;
+    position: fixed;
+    margin-bottom: 0;
 }
 
 @media (max-width:767px){
