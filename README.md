@@ -9,3 +9,9 @@
   - pulls weather from API based on the zipcode entered by the user
 
 - Displays Warning if Extreme Weather is Expected in User's Area 
+
+
+	REQUIREMENTS:
+        Page requires a key.js file with the following format
+        var APIKEY = "apikey from openweathermap.org" 
+    
