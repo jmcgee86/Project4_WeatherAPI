@@ -14,43 +14,47 @@
 	<div class="container" id="greybg">
 		<div class="jumbotron" id="bluebg">
 			<h1 id="pagetitle">Today's Weather</h1>
-			<form id = "failed">
-	    		Could not find your location, please enter zip code:
-	    		<input id ="zc" type = "text" name= "zip" value="Enter Zipcode">
-	    		<button id = "zipsub" type = "submit" name ="submit">Submit</button>
-	    	</form>
-	    	<div id = "weatherdisplay">
-			<div class="row">
-				<div class="col-sm-4"><button id ="changetemp" class="btn btn-primary">F°</button></div>
-				<div class="col-sm-12">
-					<p id ="ctemp">Current Temperature: </span></p>
-				</div>
+			<form id="failed" name="failed">
+				Could not find your location, please enter zip code: <input id="zc" name="zip" type="text" value="Enter Zipcode"> <button id="zipsub" name="submit" type="submit">Submit</button>
+			</form>
+			<div id="weatherdisplay">
+				<div class="row">
+					<div class="col-sm-4">
+						<button class="btn btn-primary" id="changetemp">F°</button>
+					</div>
+					<div class="col-sm-12">
+						<p id="ctemp">Current Temperature:</p>
+					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<h1 id = "temp"></h1>	
+						<h1 id="temp"></h1>
 					</div>
 				</div>
-				<div class = "row">
-					<div class = "col-sm-12" id="icon"></div>
+				<div class="row">
+					<div class="col-sm-12" id="icon"></div>
 				</div>
-				<div class = "row">
-					<div class = "col-sm-12"><p>Today's Forecast: <span id="description"></span></p></div>
+				<div class="row">
+					<div class="col-sm-12">
+						<p>Today's Forecast: <span id="description"></span></p>
+					</div>
 				</div>
-				<div class = "row">
-					<div class = "col-sm-12"><p>Weather for: <span id = "city"></p></span></div>
+				<div class="row">
+					<div class="col-sm-12">
+						<p>Weather for: <span id="city"></span></p>
+					</div>
 				</div>
-				</div>
-				<div id = "warn"></div>
-				<div class = "container-fluid" id = "displayimg"></div>
-				
+			</div>
+			<div id="warn"></div>
+			<div class="container-fluid" id="displayimg"></div>
 		</div>
 	</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script> 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	</script> 
-	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js">
+	</script> 
 	<script src="key.js">
 	</script> 
 	<script src="index.js">
